@@ -14,7 +14,7 @@ type ErrorPayload = {
 };
 
 const BUBBLE_ENDPOINT =
-  "https://panda.new/version-test/api/1.1/wf/error/";
+  "https://panda.new/api/1.1/wf/error/";
 
 const repo =
   (typeof process !== "undefined" && process.env && process.env.REPO_URL) ||
