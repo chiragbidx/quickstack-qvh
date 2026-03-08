@@ -1,0 +1,10 @@
+.git
+node_modules
+.next
+*.log
+Dockerfile
+.dockerignore
+README.md
+railway.json
+tmp
+.DS_Store

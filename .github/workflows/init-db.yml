@@ -1,0 +1,28 @@
+name: Init DB
+
+on:
+  workflow_dispatch:
+    inputs:
+      project_id:
+        description: "Panda project ID"
+        required: true
+      database_url:
+        description: "Postgres connection string"
+        required: true
+
+jobs:
+  init-db:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Init database
+        run: node scripts/db-init.js
+        env:
+          DATABASE_URL: ${{ inputs.database_url }}
+          PROJECT_ID: ${{ inputs.project_id }}
